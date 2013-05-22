@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 public class Person {
 
     private String employeeId;
+    private String externalEmail;
 
     public String getEmployeeId() {
         return employeeId;
@@ -16,5 +17,13 @@ public class Person {
 
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
+    }
+
+    public String getExternalEmail() {
+        return externalEmail;
+    }
+
+    public void setExternalEmail(String externalEmail) {
+        this.externalEmail = externalEmail;
     }
 }
