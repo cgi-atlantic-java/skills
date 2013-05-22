@@ -10,6 +10,7 @@ public class Person {
 
     private String employeeId;
     private String externalEmail;
+    private String externalPhone;
 
     public String getEmployeeId() {
         return employeeId;
@@ -25,5 +26,13 @@ public class Person {
 
     public void setExternalEmail(String externalEmail) {
         this.externalEmail = externalEmail;
+    }
+
+    public String getExternalPhone() {
+        return externalPhone;
+    }
+
+    public void setExternalPhone(String externalPhone) {
+        this.externalPhone = externalPhone;
     }
 }
