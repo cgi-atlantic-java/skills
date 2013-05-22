@@ -3,7 +3,7 @@ package com.cgi.skills.model;
 import javax.persistence.Entity;
 
 /**
- * TODO: Document this
+ * A person who can have skills
  */
 @Entity
 public class Person {
