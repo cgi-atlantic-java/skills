@@ -7,48 +7,19 @@ import javax.persistence.ManyToOne;
  * TODO: Document this
  */
 @Entity
-public class Skill extends Base {
+public class Skill {
 
     @ManyToOne
-    private Origin origin;
+    private SkillArea area;
 
     @ManyToOne
-    private Category category;
+    private SkillLevel level;
 
-    @ManyToOne
-    private SkillType type;
-
-    private boolean ui;
-
-    public Origin getOrigin() {
-        return origin;
+    public SkillArea getArea() {
+        return area;
     }
 
-    public void setOrigin(Origin origin) {
-        this.origin = origin;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
-
-    public SkillType getType() {
-        return type;
-    }
-
-    public void setType(SkillType type) {
-        this.type = type;
-    }
-
-    public boolean isUi() {
-        return ui;
-    }
-
-    public void setUi(boolean ui) {
-        this.ui = ui;
+    public void setArea(SkillArea area) {
+        this.area = area;
     }
 }
