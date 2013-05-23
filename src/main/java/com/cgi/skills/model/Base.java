@@ -1,5 +1,6 @@
 package com.cgi.skills.model;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,6 +16,7 @@ public abstract class Base implements NamedIdentified {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(unique = true, nullable = false)
     private String name;
 
     public void setId(Long id) {

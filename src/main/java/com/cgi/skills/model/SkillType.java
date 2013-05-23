@@ -7,4 +7,7 @@ import javax.persistence.Entity;
  */
 @Entity
 public class SkillType extends Base {
+
+    // no further members at this time
+
 }

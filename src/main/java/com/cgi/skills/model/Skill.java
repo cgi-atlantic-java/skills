@@ -1,6 +1,7 @@
 package com.cgi.skills.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 /**
  * TODO: Document this
@@ -8,9 +9,14 @@ import javax.persistence.Entity;
 @Entity
 public class Skill extends Base {
 
+    @ManyToOne
     private Origin origin;
+
     private Category category;
+
+    @ManyToOne
     private SkillType type;
+
     private boolean ui;
 
     public Origin getOrigin() {
