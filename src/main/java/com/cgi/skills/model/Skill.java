@@ -12,6 +12,7 @@ public class Skill extends Base {
     @ManyToOne
     private Origin origin;
 
+    @ManyToOne
     private Category category;
 
     @ManyToOne
