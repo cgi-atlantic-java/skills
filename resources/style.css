@@ -1,0 +1,80 @@
+body {
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+
+.table {
+  border-collapse: collapse;
+  border: 0;
+}
+
+.web-ui  .tdbody {
+  background-color: yellow;
+}
+
+.tools .tdbody {
+  background-color: #A3B8CB;
+}
+.deployment .tdbody {
+  background-color: #ED9B4F;
+}
+.ui .tdbody {
+  background-color: #E76F00;
+}
+
+.jvm .tdbody {
+  background-color: #C5D5A9;
+}
+
+.tablerows {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+.tdbody {
+  border: 1px solid white;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+  vertical-align: middle;
+  line-height: 90%;
+  height: 1.9em;
+  text-align: center;
+}
+
+td.tdhead > a, td.tdleftside > a, td.tdrightside > a {
+  text-decoration: underline;
+}
+
+.tdhead {
+  border: 2px solid white;
+  padding-right: 0.5em;
+  vertical-align:middle;
+  text-align: right;
+}
+
+.tdleftside {
+  border-color: black;
+  border-style: solid;
+  border-top-width: 2px;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+  vertical-align: middle;
+  text-align: left;
+  border-right: 0px solid white;
+}
+
+.tdrightside {
+  border-left: 0px;
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+  vertical-align: middle;
+  text-align: center
+}
