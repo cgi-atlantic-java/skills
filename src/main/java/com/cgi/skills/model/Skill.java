@@ -22,4 +22,12 @@ public class Skill {
     public void setArea(SkillArea area) {
         this.area = area;
     }
+
+    public SkillLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(SkillLevel level) {
+        this.level = level;
+    }
 }

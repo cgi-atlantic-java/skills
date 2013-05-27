@@ -18,8 +18,6 @@ public class SkillArea extends Base {
     @ManyToOne
     private SkillType type;
 
-    private boolean ui;
-
     public Origin getOrigin() {
         return origin;
     }
@@ -42,13 +40,5 @@ public class SkillArea extends Base {
 
     public void setType(SkillType type) {
         this.type = type;
-    }
-
-    public boolean isUi() {
-        return ui;
-    }
-
-    public void setUi(boolean ui) {
-        this.ui = ui;
     }
 }
