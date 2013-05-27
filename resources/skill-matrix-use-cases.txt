@@ -1,0 +1,32 @@
+Use cases for Skills app (Java)
+
+1) Enter skills for CGI member
+=> All Java devs on DB
+
+- Go to http://x/skills/
+- login (CGI user id)
+- Auto-create Person with (id, name, emplId)
+- Edit own skill profile (Form)
+- Submit
+
+2) View skill profile of CGI member
+- Go to URL http://x/skills/member/oliver.doepner
+- Look at the page
+
+3) Find skill profiles
+- http://x/skills/
+- Select from drop-down list of profiles
+- Click "View" button
+=> Target is the respective profile URL
+=> see 2)
+
+X) 
+- Enter skills for non-CGI person
+- Maintain value tables
+
+
+
+
+
+
+Authentication via LDAP/AD

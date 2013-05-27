@@ -1,0 +1,24 @@
+
+IDE
+Eclipse, Netbeans, Intellij
+
+Build automation
+Maven, Ant, Gradle(?)
+
+CI servers
+Jenkins, Bamboo, Teamcity
+
+Code analysis
+Checkstyle, PMD, findBugs, JCoco
+
+Unit testing
+JUnit, TestNG, Mock frameworks
+
+Web frameworks
+Struts, Wicket, GWT, Spring MVC, Play, ZK, Oracle ADF
+
+Elements of the Spring framework
+
+
+Persistence / ORM
+Hibernate, MyBatis, JDO, ...

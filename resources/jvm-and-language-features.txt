@@ -1,0 +1,24 @@
+JVM
+    Memory model, Garbage collection
+    Class-loading, class-path
+    Byte-code, verification, execution, JIT compilation
+    JVM options, command-line parameters
+
+Java Programming language
+    General structure of a Java program (files, classes, packages, main method)
+    Imperative basics (primitives, literals, operators, control flow, methods)
+    Syntax basics (keywords, names, scopes, blocks, visibility
+    OO basics (classes, objects, inheritance, overriding, ...)
+    Interfaces, abstract methods and classes
+    Packages, imports, visibility levels
+    Object class (equals, hashCode, clone, etc)
+    Object creation, class initialization
+    Exceptions (throwable types, try-catch, finally, ...)
+    Threads, synchronization, volatile
+    Generics (type parameters, wildcards, ...)
+    for-each, Iterables, Arrays
+    Auto-boxing (wrapper classes)
+    Enums (identity, iteration, switch, methods, limited polymorphism)
+    Varargs (constraints, benefits, caveats)
+    Static Import
+    Annotations
