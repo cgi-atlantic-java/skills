@@ -21,7 +21,6 @@ Skill table (columns)
 - origin_id
 - category_id
 - skill_type_id
-- is_ui (boolean)
 
 Origin (names)
 - JSE
@@ -40,6 +39,7 @@ Category (names)
 - Build
 - Testing
 - Development
+- GUI
 
 Skill type (names)
 - API/library
