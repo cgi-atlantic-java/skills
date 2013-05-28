@@ -1,12 +1,14 @@
 Data Model
 
 Tables
-- Skill (see below) 
+- SkillArea (see below)
 - Person (see below)
 - Category (id, name)
 - Origin (id, name)
 - SkillType (id, name)
 - Person_Skill (skill_id, member_id)
+- SkillLevel
+- Skill
 
 Person (columns)
 - id 
@@ -15,7 +17,20 @@ Person (columns)
 - external_email (unique if not null)
 - external_phone (unique if not null)
 
-Skill table (columns)
+Skill
+- skill_area_id
+- skill_level_id
+
+SkillLevel
+- id (also used as rank, percent)
+- name
+
+SkillLevel values : name (id)
+- Junior (25)
+- Intermediate (50)
+- Senior (75)
+
+SkillArea table (columns)
 - id
 - name
 - origin_id
