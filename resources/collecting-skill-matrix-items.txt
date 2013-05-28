@@ -1,0 +1,25 @@
+API / frameworks
+================
+
+JEE
+---
+=> http://docs.oracle.com/javase/7/docs/index.html
+=> http://docs.oracle.com/javaee/6/api/
+
+Skill area | Category | URL
+...
+
+JSE (http://docs.oracle.com/javase/7/docs/index.html)
+---
+
+Skill area | Category | URL
+...
+
+Other (Open Source, 3r party)
+=> http://java-source.net/
+
+Skill area | Category
+...
+
+Other (vendor, proprietary)
+
