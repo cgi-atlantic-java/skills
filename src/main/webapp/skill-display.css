@@ -1,0 +1,79 @@
+body {
+	font-family:"Times New Roman", Times, serif;
+	font-size: 12px;
+}
+
+h1 {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
+}
+
+div {
+	display: block;
+}
+
+div.noscript-container
+{
+	display:inline-block;
+	border:solid;
+	border-width:2px;
+	padding:6px;
+	overflow:hidden;
+	width: 275px;
+}
+select.skill-dropdown {
+	color: #AAAAAA;
+	overflow:hidden;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	display: inline;
+}
+
+ select.skill-dropdown option[value="0"] { background: #FFFFFF; background-color: #FFFFFF;}
+ select.skill-dropdown option[value="1"] { background: #0000FF; background-color: #0000FF;}
+ select.skill-dropdown option[value="2"] { background: #FFFF00; background-color: #FFFF00;}
+ select.skill-dropdown option[value="3"] { background: #00FF00; background-color: #00FF00;}
+.colored[skill-value="0"]{ background: #FFFFFF; background-color: #FFFFFF;}
+.colored[skill-value="1"]{ background: #0000FF; background-color: #0000FF;}
+.colored[skill-value="2"]{ background: #FFFF00; background-color: #FFFF00;}
+.colored[skill-value="3"]{ background: #00FF00; background-color: #00FF00;}
+
+div.dropdown-holder
+{
+	overflow:hidden;
+	border:none;
+	display:inline;
+}
+
+div.skills
+{
+	border:solid;
+	border-width:2px;
+	padding:6px;
+	overflow:hidden;
+	width:275px;
+}
+
+.javascript-enabled {
+	display: none;
+}
+
+.colored
+{
+	float:left;
+	border:solid;
+	border-width:1px;
+	overflow:hidden;
+    height:25px;
+    display:inline;
+	color: #AAAAAA;
+	-moz-user-select: none; -webkit-user-select: none;-ms-user-select: none;user-select: none;
+	padding-right:5px;
+	padding-left:5px;
+	padding-top:4px;
+	padding-bottom:1px;
+	cursor: hand; 
+	cursor: pointer;
+}

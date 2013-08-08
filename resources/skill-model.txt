@@ -60,6 +60,7 @@ Skill type (names)
 - API/library
 - Framework
 - Tool
+
 - Application Servers [*]
 - JVM details [*]
 - Language feature [*]

@@ -3,10 +3,10 @@ package com.cgi.skills.model;
 import javax.persistence.Entity;
 
 /**
- * TODO: Document this
+ * Skill category (semantics depend on your skill domain)
  */
 @Entity
-public class Category extends Base {
+public class Category extends Named {
 
     // no further members at this time !
 }

@@ -1,0 +1,9 @@
+<Context>
+
+    <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+           resourceName="UserDatabase"
+           allRolesMode="authOnly"/>
+
+    <Parameter name="environment" value="DEV" override="false"/>
+
+</Context>

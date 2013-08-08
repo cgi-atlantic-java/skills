@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- * TODO: Document this
+ * Skill area (semantics depend on your skill domain)
  */
 @Entity
-public class SkillArea extends Base {
+public class SkillArea extends Named {
 
     @ManyToOne
     private Origin origin;

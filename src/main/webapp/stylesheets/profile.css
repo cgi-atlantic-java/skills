@@ -1,0 +1,22 @@
+
+div.type{
+  display:table;         
+  width:auto;         
+  background-color:#eee;         
+  border:solid silver 1px;         
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+div.origin{
+  display:table-row;         
+  width:auto;
+  border:solid black 1px;                             
+  border-spacing:5px;/*cellspacing:poor IE support for  this*/
+}
+div.category{
+  display:table-column;
+  width:auto;
+  float: right;
+  border-spacing: 5px;
+  padding:10px;
+}
+

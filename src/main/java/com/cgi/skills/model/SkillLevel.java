@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 
 /**
- * TODO: Document this
+ * Skill level (relative to 100 being "perfect")
  */
 @Entity
-public class SkillLevel extends Base {
+public class SkillLevel extends Named {
 
     @Column(unique = true)
     private int percent;

@@ -1,8 +1,12 @@
-.idea
+/.idea
+/target
 *.iml
 
 *.class
 *.jar
 
-.project
-.classpath
+/.project
+/.classpath
+/.settings
+
+

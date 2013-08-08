@@ -1,10 +1,13 @@
 package com.cgi.skills.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
 
 /**
  * A person who can have skills
@@ -12,23 +15,23 @@ import javax.persistence.OneToMany;
 @Entity
 public class Person implements SkillProfile {
 
-    @Column(unique = true)
-    private String employeeId;
+    @Id
+    private String login;
 
     @Column(unique = true)
     private String externalEmail;
 
     private String externalPhone;
 
-    @OneToMany
-    private Set<Skill> skills;
+    @OneToMany()
+    private Set<Skill> skills = new HashSet<>();
 
-    public String getEmployeeId() {
-        return employeeId;
+    public String getLogin() {
+        return login;
     }
 
-    public void setEmployeeId(String employeeId) {
-        this.employeeId = employeeId;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getExternalEmail() {
@@ -54,5 +57,10 @@ public class Person implements SkillProfile {
     @Override
     public Set<Skill> getSkills() {
         return skills;
+    }
+
+    @Override
+    public String getName() {
+        return login;
     }
 }

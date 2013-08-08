@@ -1,0 +1,159 @@
+<!-- 
+#############################################################
+#															#
+#	Example below shows two skills (JSP and Spring)			#
+#   To make this JSP compatible, replacements are needed	#
+#   and an interator to create the <noscript> and 			#
+#   divs / selectors - just replace any instance of spring	#
+#    with the skill name and it should all tie together		#
+#	if you remove the JSP one entirely.						#
+#############################################################
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="skill-display.css">
+</head>
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="skill-display.js"></script>
+<form class="javascript-enabled" id="skill_form">
+    <!-- these hidden fields are only submitted if javascript is on -->
+    <input name="Spring" type="hidden" id="Spring">
+    <input name="Hibernate" type="hidden" id="Hibernate">
+    <input name="ActiveMQ" type="hidden" id="ActiveMQ">
+    <input name="Quartz" type="hidden" id="Quartz">
+    <input name="Struts" type="hidden" id="Struts">
+    <input name="ApacheAxis" type="hidden" id="ApacheAxis">
+    <input name="Velocity" type="hidden" id="Velocity">
+    <input name="JAXB" type="hidden" id="JAXB">
+
+    <!-- displayables if JS is on -->
+    <div id="skills-container" class="skills javascript-enabled">
+        <h1>UI</h1>
+
+        <div id="Spring-colorbox" unselectable="on" myformfield="Spring" class="colored"
+             skill-value="0">Spring
+        </div>
+        <div id="Swing-colorbox" unselectable="on" myformfield="Swing" class="colored"
+             skill-value="0">Swing
+        </div>
+        <div id="AWT-colorbox" unselectable="on" myformfield="AWT" class="colored" skill-value="0">
+            AWT
+        </div>
+        <div id="SwingX-colorbox" unselectable="on" myformfield="SwingX" class="colored"
+             skill-value="0">SwingX
+        </div>
+        <div id="JavaFX-colorbox" unselectable="on" myformfield="JavaFX" class="colored"
+             skill-value="0">JavaFX
+        </div>
+        <div id="ApachePivot-colorbox" unselectable="on" myformfield="ApachePivot" class="colored"
+             skill-value="0">ApachePivot
+        </div>
+        <div id="SWT-colorbox" unselectable="on" myformfield="SWT" class="colored" skill-value="0">
+            SWT
+        </div>
+    </div>
+    <div id="skills-container" class="skills javascript-enabled">
+        <h1>Frameworks</h1>
+
+        <div id="JQuery-colorbox" unselectable="on" myformfield="JQuery" class="colored"
+             skill-value="0">JQuery
+        </div>
+        <div id="Hibernate-colorbox" unselectable="on" myformfield="Hibernate" class="colored"
+             skill-value="0">Hibernate
+        </div>
+        <div id="ActiveMQ-colorbox" unselectable="on" myformfield="ActiveMQ" class="colored"
+             skill-value="0">ActiveMQ
+        </div>
+        <div id="Quartz-colorbox" unselectable="on" myformfield="Quartz" class="colored"
+             skill-value="0">Quartz
+        </div>
+        <div id="Struts-colorbox" unselectable="on" myformfield="Struts" class="colored"
+             skill-value="0">Struts
+        </div>
+        <div id="ApacheAxis-colorbox" unselectable="on" myformfield="ApacheAxis" class="colored"
+             skill-value="0">ApacheAxis
+        </div>
+        <div id="Velocity-colorbox" unselectable="on" myformfield="Velocity" class="colored"
+             skill-value="0">Velocity
+        </div>
+        <div id="JAXB-colorbox" unselectable="on" myformfield="JAXB" class="colored"
+             skill-value="0">JAXB
+        </div>
+    </div>
+    <div><input type="submit" name="submit"/></div>
+</form>
+<noscript>
+    <form>
+        <div class="noscript-container">
+            <div class="dropdown-holder">
+                <select name="Spring" class="skill-dropdown" id="Spring-id">
+                    <option value="0" style="background-color: #FFFFFF;">Spring</option>
+                    <option value="1" style="background-color: #0000FF;">Spring</option>
+                    <option value="2" style="background-color: #FFFF00;">Spring</option>
+                    <option value="3" style="background-color: #00FF00;">Spring</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="Hibernate" class="skill-dropdown" id="Hibernate-id">
+                    <option value="0" style="background-color: #FFFFFF;">Hibernate</option>
+                    <option value="1" style="background-color: #0000FF;">Hibernate</option>
+                    <option value="2" style="background-color: #FFFF00;">Hibernate</option>
+                    <option value="3" style="background-color: #00FF00;">Hibernate</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="ActiveMQ" class="skill-dropdown" id="ActiveMQ-id">
+                    <option value="0" style="background-color: #FFFFFF;">ActiveMQ</option>
+                    <option value="1" style="background-color: #0000FF;">ActiveMQ</option>
+                    <option value="2" style="background-color: #FFFF00;">ActiveMQ</option>
+                    <option value="3" style="background-color: #00FF00;">ActiveMQ</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="Quartz" class="skill-dropdown" id="Quartz-id">
+                    <option value="0" style="background-color: #FFFFFF;">Quartz</option>
+                    <option value="1" style="background-color: #0000FF;">Quartz</option>
+                    <option value="2" style="background-color: #FFFF00;">Quartz</option>
+                    <option value="3" style="background-color: #00FF00;">Quartz</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="Struts" class="skill-dropdown" id="Struts-id">
+                    <option value="0" style="background-color: #FFFFFF;">Struts</option>
+                    <option value="1" style="background-color: #0000FF;">Struts</option>
+                    <option value="2" style="background-color: #FFFF00;">Struts</option>
+                    <option value="3" style="background-color: #00FF00;">Struts</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="ApacheAxis" class="skill-dropdown" id="ApacheAxis-id">
+                    <option value="0" style="background-color: #FFFFFF;">ApacheAxis</option>
+                    <option value="1" style="background-color: #0000FF;">ApacheAxis</option>
+                    <option value="2" style="background-color: #FFFF00;">ApacheAxis</option>
+                    <option value="3" style="background-color: #00FF00;">ApacheAxis</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="Velocity" class="skill-dropdown" id="Velocity-id">
+                    <option value="0" style="background-color: #FFFFFF;">Velocity</option>
+                    <option value="1" style="background-color: #0000FF;">Velocity</option>
+                    <option value="2" style="background-color: #FFFF00;">Velocity</option>
+                    <option value="3" style="background-color: #00FF00;">Velocity</option>
+                </select>
+            </div>
+            <div class="dropdown-holder">
+                <select name="JAXB" class="skill-dropdown" id="JAXB-id">
+                    <option value="0" style="background-color: #FFFFFF;">JAXB</option>
+                    <option value="1" style="background-color: #0000FF;">JAXB</option>
+                    <option value="2" style="background-color: #FFFF00;">JAXB</option>
+                    <option value="3" style="background-color: #00FF00;">JAXB</option>
+                </select>
+            </div>
+        </div>
+        <div><input type="submit" name="submit"/></div>
+    </form>
+</noscript>
+</body>
+</html>
