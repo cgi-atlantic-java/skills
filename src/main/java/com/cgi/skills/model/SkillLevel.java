@@ -7,7 +7,7 @@ import javax.persistence.Entity;
  * Skill level (relative to 100 being "perfect")
  */
 @Entity
-public class SkillLevel extends Named {
+public class SkillLevel extends NamedIdHolder {
 
     @Column(unique = true)
     private int percent;

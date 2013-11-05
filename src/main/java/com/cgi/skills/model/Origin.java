@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  * sub-domain of the skills domain.
  */
 @Entity
-public class Origin extends Named {
+public class Origin extends NamedIdHolder {
 
     // no further members at this time
 

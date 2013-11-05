@@ -6,7 +6,7 @@ import java.util.HashSet;
 import javax.persistence.EntityManager;
 
 import com.cgi.skills.model.Category;
-import com.cgi.skills.model.Named;
+import com.cgi.skills.model.NamedIdHolder;
 import com.cgi.skills.model.Origin;
 import com.cgi.skills.model.Person;
 import com.cgi.skills.model.Skill;
@@ -130,7 +130,7 @@ public class DataInitializer {
         return sa;
     }
 
-    private <T extends Named> T persist(T entity, String name) {
+    private <T extends NamedIdHolder> T persist(T entity, String name) {
         entity.setName(name);
         em.persist(entity);
         return entity;

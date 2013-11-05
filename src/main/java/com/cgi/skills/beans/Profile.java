@@ -9,11 +9,11 @@ import com.cgi.skills.model.Origin;
 import com.cgi.skills.model.Skill;
 import com.cgi.skills.model.SkillArea;
 import com.cgi.skills.model.SkillLevel;
-import com.cgi.skills.model.SkillProfile;
 import com.cgi.skills.model.SkillType;
+import com.cgi.skills.model.interfaces.SkillProfile;
 
 /**
- * TODO: Document this
+ * UI bean representing a skill profile
  */
 public class Profile implements IProfile {
 

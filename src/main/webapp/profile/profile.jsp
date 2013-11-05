@@ -5,54 +5,48 @@
 
 <jsp:useBean id="profile" type="com.cgi.skills.beans.IProfile"
 	scope="request" />
-<jsp:useBean id="classifications"
-	type="com.cgi.skills.beans.Classifications" scope="request" />
+<jsp:useBean id="classifications" type="com.cgi.skills.beans.Classifications"
+    scope="request" />
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="stylesheets/profile.css">
-
-
-</head>
+<link rel="stylesheet" type="text/css" href="profile.css">
 <title>${profile.name}</title>
+</head>
 
 <body>
 
 	<form method="post">
-		<c:forEach items="${classifications.allTypes}" var="type">
+		<c:forEach var="type" items="${classifications.allTypes}">
 			<div class="type">
 				${type}
-				<c:forEach items="${classifications.allOrigins}" var="origin">
+				<c:forEach var="origin" items="${classifications.allOrigins}">
 					<div class="origin">
 						${origin}
-						<c:forEach items="${classifications.allCategories}" var="category">
+						<c:forEach var="category" items="${classifications.allCategories}">
 							<div class="category">
-								<c:set var="test"
+								<c:set var="areas"
 									value="${classifications.getAllSkillAreas(category,type,origin)}" />
 								
-								<c:if test="${!empty test}">
+								<c:if test="${!empty areas}">
 
 								${category}
 
-								<c:forEach
-										items="${test}"
-										var="area">
+								<c:forEach var="area" items="${areas}">
 										<div class="skill">
 
 											<c:set var="currentLevel"
 												value="${profile.getSkillLevel(area)}" />
 
-											<label for="${area.id}">${area.name}</label> <select
-												name="${area.id}" id="${area.id}">
-
+											<label for="${area.id}">${area.name}</label>
+											<select name="${area.id}" id="${area.id}">
 												<html:option option="${nullLevel}" id="${currentLevel.id}" />
-
 												<c:forEach items="${classifications.allLevels}" var="level">
 													<html:option option="${level}" id="${currentLevel.id}" />
 												</c:forEach>
 											</select>
 										</div>
-									</c:forEach>
+							    </c:forEach>
 									
 								</c:if>
 								

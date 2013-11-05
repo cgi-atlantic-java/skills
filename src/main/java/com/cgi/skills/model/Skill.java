@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 /**
- * A skill is a level or expertise in a certain area
+ * A skill is a level of expertise in a certain area
  */
 @Entity
-public class Skill extends Identified implements Comparable<Skill> {
+public class Skill extends IdHolder implements Comparable<Skill> {
 
     @ManyToOne
     private SkillArea area;
@@ -41,7 +41,7 @@ public class Skill extends Identified implements Comparable<Skill> {
     }
 
     @Override
-    public int compareTo(Skill other) {
+    public final int compareTo(Skill other) {
         return area.getName().compareTo(other.area.getName());
     }
 }

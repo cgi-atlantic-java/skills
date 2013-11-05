@@ -7,7 +7,7 @@ import javax.persistence.Entity;
  * The concrete semantics depend on your skill domain.
  */
 @Entity
-public class SkillType extends Named {
+public class SkillType extends NamedIdHolder {
 
     // no further members at this time
 

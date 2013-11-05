@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.cgi.skills.model.interfaces.SkillProfile;
+
 
 /**
  * A person who can have skills

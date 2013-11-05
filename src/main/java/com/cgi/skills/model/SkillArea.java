@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
  * Skill area (semantics depend on your skill domain)
  */
 @Entity
-public class SkillArea extends Named {
+public class SkillArea extends NamedIdHolder {
 
     @ManyToOne
     private Origin origin;
