@@ -10,6 +10,9 @@ import com.cgi.skills.model.Skill;
  */
 public interface SkillProfile extends Named {
 
+    /**
+     * @return The set of skills
+     */
     Set<Skill> getSkills();
 
 }

@@ -23,12 +23,12 @@ public class NamedIdHolder extends IdHolder implements NamedIdentified {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return name;
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return name.hashCode();
     }
 
