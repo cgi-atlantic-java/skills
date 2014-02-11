@@ -68,7 +68,7 @@ public final class ProfileServlet extends HttpServlet {
             request.setAttribute("profile", new Profile(person));
             request.setAttribute("classifications", new Classifications(em));
 
-            getServletContext().getRequestDispatcher("/WEB-INF/profile/profile.jsp").forward(
+            getServletContext().getRequestDispatcher("/profile/profile.jsp").forward(
                     request, response);
 
         } finally {
