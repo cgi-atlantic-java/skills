@@ -2,7 +2,7 @@
 div.type{
   display:table;         
   width:auto;         
-  background-color:#eee;         
+  background-color:#fdd;
   border:solid silver 1px;         
   border-spacing:5px;/*cellspacing:poor IE support for  this*/
 }
