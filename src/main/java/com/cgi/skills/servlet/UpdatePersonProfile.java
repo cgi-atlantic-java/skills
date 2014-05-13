@@ -17,7 +17,7 @@ import com.cgi.skills.model.SkillArea;
 import com.cgi.skills.model.SkillLevel;
 import com.cgi.skills.model.meta.Skill_;
 
-public class UpdatePersonProfile implements EntityProcessor<Person> {
+public final class UpdatePersonProfile implements EntityProcessor<Person> {
 
     @Override
     public void process(HttpServletRequest request, EntityManager em, Person person) {
@@ -42,15 +42,7 @@ public class UpdatePersonProfile implements EntityProcessor<Person> {
                 final SkillArea area = em.find(SkillArea.class, skillAreaId);
                 final SkillLevel level = em.find(SkillLevel.class, skillLevelId);
 
-                final CriteriaBuilder cb = em.getCriteriaBuilder();
-                final CriteriaQuery<Skill> c = cb.createQuery(Skill.class);
-                final Root<Skill> ski = c.from(Skill.class);
-
-                c.select(ski).where(
-                        cb.equal(ski.get(Skill_.area), area),
-                        cb.equal(ski.get(Skill_.level), level));
-
-                final List<Skill> result = em.createQuery(c).getResultList();
+                final List<Skill> result = getSkills(em, area, level);
 
                 if (result.isEmpty()) {
                     skills.add(new Skill(area, level));
@@ -68,8 +60,19 @@ public class UpdatePersonProfile implements EntityProcessor<Person> {
         em.persist(person);
     }
 
+    private List<Skill> getSkills(EntityManager em, SkillArea area, SkillLevel level) {
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<Skill> c = cb.createQuery(Skill.class);
+        final Root<Skill> ski = c.from(Skill.class);
+
+        c.select(ski).where(
+                cb.equal(ski.get(Skill_.area), area),
+                cb.equal(ski.get(Skill_.level), level));
+
+        return em.createQuery(c).getResultList();
+    }
+
     private static Long convert(final String val) {
         return val == null || val.isEmpty() ? null : Long.valueOf(val);
     }
-
 }
