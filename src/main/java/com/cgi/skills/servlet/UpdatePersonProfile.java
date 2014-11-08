@@ -15,7 +15,7 @@ import com.cgi.skills.model.Person;
 import com.cgi.skills.model.Skill;
 import com.cgi.skills.model.SkillArea;
 import com.cgi.skills.model.SkillLevel;
-import com.cgi.skills.model.meta.Skill_;
+import com.cgi.skills.model.Skill_;
 
 public final class UpdatePersonProfile implements EntityProcessor<Person> {
 

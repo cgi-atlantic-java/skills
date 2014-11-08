@@ -1,11 +1,7 @@
-package com.cgi.skills.model.meta;
+package com.cgi.skills.model;
 
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
-
-import com.cgi.skills.model.Skill;
-import com.cgi.skills.model.SkillArea;
-import com.cgi.skills.model.SkillLevel;
 
 
 @StaticMetamodel(Skill.class)

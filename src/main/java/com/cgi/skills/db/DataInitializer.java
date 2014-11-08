@@ -1,10 +1,5 @@
 package com.cgi.skills.db;
 
-import java.util.Arrays;
-import java.util.HashSet;
-
-import javax.persistence.EntityManager;
-
 import com.cgi.skills.model.Category;
 import com.cgi.skills.model.NamedIdHolder;
 import com.cgi.skills.model.Origin;
@@ -13,6 +8,11 @@ import com.cgi.skills.model.Skill;
 import com.cgi.skills.model.SkillArea;
 import com.cgi.skills.model.SkillLevel;
 import com.cgi.skills.model.SkillType;
+
+import javax.persistence.EntityManager;
+import java.util.HashSet;
+
+import static java.util.Arrays.asList;
 
 public class DataInitializer {
 
@@ -45,7 +45,6 @@ public class DataInitializer {
         final Category ui = persist(new Category(), "UI");
 
         final Category ph = persist(new Category(), "PH");
-
 
         final SkillArea jpa = persist(new SkillArea(), "JPA", api, jee, persistence);
         final SkillArea jta = persist(new SkillArea(), "JTA", api, jee, persistence);
@@ -91,41 +90,45 @@ public class DataInitializer {
         final SkillLevel intermediate = createLevel("Intermediate", 50);
         final SkillLevel expert = createLevel("Expert", 75);
 
-        final Skill Swing = new Skill();
-        Swing.setArea(swing);
-        em.persist(Swing);
+        createPerson("faran.khattana",
+                skill(expert, jpa),
+                skill(intermediate, jta));
 
+        createPerson("oliver.doepner",
+                skill(expert, jpa),
+                skill(intermediate, jta));
+    }
+
+    private void createPerson(String login, Skill... skills) {
         final Person person = new Person();
-        person.setLogin("faran.khattana");
-
-        person.setSkills(new HashSet<Skill>(Arrays.asList(skill(expert, jpa),
-                skill(intermediate, jta))));
-
+        person.setLogin(login);
+        person.setSkills(new HashSet<>(asList(skills)));
         em.persist(person);
     }
 
-    private SkillLevel createLevel(String level, int percent) {
-        final SkillLevel intermediate = new SkillLevel();
-        intermediate.setPercent(percent);
-        intermediate.setName(level);
-        em.persist(intermediate);
-        return intermediate;
+    private SkillLevel createLevel(String name, int percent) {
+        final SkillLevel level = new SkillLevel();
+        level.setPercent(percent);
+        level.setName(name);
+        em.persist(level);
+        return level;
     }
 
-    private Skill skill(SkillLevel skillLevel, SkillArea sa) {
+    private Skill skill(SkillLevel level, SkillArea area) {
         final Skill skill = new Skill();
-        skill.setArea(sa);
-        skill.setLevel(skillLevel);
+        skill.setArea(area);
+        skill.setLevel(level);
         em.persist(skill);
         return skill;
     }
 
-    private SkillArea persist(SkillArea sa, String name, SkillType api, Origin jee,
-                              Category persistence) {
+    private SkillArea persist(SkillArea sa, String name,
+                              SkillType skillType, Origin origin,
+                              Category category) {
         sa.setName(name);
-        sa.setCategory(persistence);
-        sa.setOrigin(jee);
-        sa.setType(api);
+        sa.setCategory(category);
+        sa.setOrigin(origin);
+        sa.setType(skillType);
         em.persist(sa);
         return sa;
     }
