@@ -1,6 +1,9 @@
 package com.cgi.skills.servlet;
 
-import java.io.IOException;
+import com.cgi.skills.beans.Classifications;
+import com.cgi.skills.beans.Profile;
+import com.cgi.skills.db.PersonDao;
+import com.cgi.skills.model.Person;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,11 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.cgi.skills.beans.Classifications;
-import com.cgi.skills.beans.Profile;
-import com.cgi.skills.db.PersonDao;
-import com.cgi.skills.model.Person;
+import java.io.IOException;
 
 /**
  * See the servlet mapping in web.xml
@@ -43,33 +42,36 @@ public final class ProfileServlet extends HttpServlet {
         handle(request, response, doPostProcessor);
     }
 
-    private void handle(HttpServletRequest request, HttpServletResponse response,
+    private void handle(HttpServletRequest request,
+                        HttpServletResponse response,
                         EntityProcessor<Person> processor)
             throws ServletException, IOException {
 
         final String login = request.getUserPrincipal().getName();
-        final Person person;
 
         final EntityManager em = getEntityManager(request);
         try {
+            final Person person = dao.getPerson(login, em);
             final EntityTransaction transaction = em.getTransaction();
-            transaction.begin();
             try {
-                person = dao.getPerson(login, em);
+                transaction.begin();
                 if (processor != null) {
                     processor.process(request, em, person);
                 }
                 transaction.commit();
+
             } catch (PersistenceException e) {
-                transaction.rollback();
+                if (transaction.isActive()) {
+                    transaction.rollback();
+                }
                 throw e;
             }
 
             request.setAttribute("profile", new Profile(person));
             request.setAttribute("classifications", new Classifications(em));
 
-            getServletContext().getRequestDispatcher("/profile.jsp").forward(
-                    request, response);
+            getServletContext().getRequestDispatcher("/profile.jspx")
+                    .forward(request, response);
 
         } finally {
             em.close();

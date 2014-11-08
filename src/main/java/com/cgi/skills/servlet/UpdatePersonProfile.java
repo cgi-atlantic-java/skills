@@ -1,21 +1,20 @@
 package com.cgi.skills.servlet;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
+import com.cgi.skills.model.Person;
+import com.cgi.skills.model.Skill;
+import com.cgi.skills.model.SkillArea;
+import com.cgi.skills.model.SkillLevel;
+import com.cgi.skills.model.Skill_;
 
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.servlet.http.HttpServletRequest;
-
-import com.cgi.skills.model.Person;
-import com.cgi.skills.model.Skill;
-import com.cgi.skills.model.SkillArea;
-import com.cgi.skills.model.SkillLevel;
-import com.cgi.skills.model.Skill_;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public final class UpdatePersonProfile implements EntityProcessor<Person> {
 
@@ -44,14 +43,11 @@ public final class UpdatePersonProfile implements EntityProcessor<Person> {
 
                 final List<Skill> result = getSkills(em, area, level);
 
-                if (result.isEmpty()) {
-                    skills.add(new Skill(area, level));
-                } else {
-                    final Skill skill = result.get(0);
-                    skill.setLevel(level);
-                    skills.add(skill);
-                    em.persist(skill);
-                }
+                final Skill skill = result.isEmpty() ? new Skill(area, level) : result.get(0);
+                skill.setLevel(level);
+                skills.add(skill);
+                em.persist(skill);
+
                 System.out.println(skillAreaId + " stands for " + area);
             }
         }
