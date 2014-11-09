@@ -18,7 +18,16 @@
                  scope="request"/>
     <head>
         <meta charset="UTF-8"/>
-        <link rel="stylesheet" type="text/css" href="profile.css"/>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript">
+            <jsp:text/>
+        </script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js" type="text/javascript">
+            <jsp:text/>
+        </script>
+        <script src="profile.js" type="text/javascript">
+            <jsp:text/>
+        </script>
+        <link href="profile.css" rel="stylesheet" type="text/css"/>
         <title>${profile.name}</title>
     </head>
 
@@ -40,7 +49,7 @@
                                             <div class="skill">
                                                 <c:set var="currentLevel"
                                                        value="${profile.getSkillLevel(area)}"/>
-                                                <label for="${area.id}">${area.name}</label>
+                                                <label for="${area.id}" title="">${area.name}</label>
                                                 <select name="${area.id}" id="${area.id}">
                                                     <html:option option="${nullLevel}" id="${currentLevel.id}"/>
                                                     <c:forEach items="${classifications.allLevels}" var="level">
