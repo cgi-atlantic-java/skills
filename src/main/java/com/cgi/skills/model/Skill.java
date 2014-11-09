@@ -1,18 +1,28 @@
 package com.cgi.skills.model;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 /**
  * A skill is a level of expertise in a certain area
  */
 @Entity
+@Table(uniqueConstraints =
+@UniqueConstraint(columnNames = {Skill.AREA_ID, Skill.LEVEL_ID}))
 public class Skill extends IdHolder implements Comparable<Skill> {
 
+    static final String AREA_ID = "area_id";
+    static final String LEVEL_ID = "level_id";
+
     @ManyToOne
+    @JoinColumn(name = AREA_ID)
     private SkillArea area;
 
     @ManyToOne
+    @JoinColumn(name = LEVEL_ID)
     private SkillLevel level;
 
     public Skill() {

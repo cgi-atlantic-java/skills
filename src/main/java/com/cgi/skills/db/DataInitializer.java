@@ -12,6 +12,7 @@ import com.cgi.skills.model.SkillType;
 import javax.persistence.EntityManager;
 import java.util.HashSet;
 
+import static com.cgi.skills.db.SkillDao.getSkill;
 import static java.util.Arrays.asList;
 
 public class DataInitializer {
@@ -91,12 +92,12 @@ public class DataInitializer {
         final SkillLevel expert = createLevel("Expert", 75);
 
         createPerson("faran.khattana",
-                skill(expert, jpa),
-                skill(intermediate, jta));
+                getSkill(em, jpa, expert),
+                getSkill(em, jta, intermediate));
 
         createPerson("oliver.doepner",
-                skill(expert, jpa),
-                skill(intermediate, jta));
+                getSkill(em, jpa, expert),
+                getSkill(em, jta, intermediate));
     }
 
     private void createPerson(String login, Skill... skills) {
@@ -112,14 +113,6 @@ public class DataInitializer {
         level.setName(name);
         em.persist(level);
         return level;
-    }
-
-    private Skill skill(SkillLevel level, SkillArea area) {
-        final Skill skill = new Skill();
-        skill.setArea(area);
-        skill.setLevel(level);
-        em.persist(skill);
-        return skill;
     }
 
     private SkillArea persist(SkillArea sa, String name,

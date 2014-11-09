@@ -24,7 +24,8 @@ public final class ProfileServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private final EntityProcessor<Person> doPostProcessor = new UpdatePersonProfile();
+    private final EntityProcessor<Person> doPostProcessor =
+            new UpdatePersonProfile();
 
     private final PersonDao dao = new PersonDao();
 
@@ -51,10 +52,11 @@ public final class ProfileServlet extends HttpServlet {
 
         final EntityManager em = getEntityManager(request);
         try {
-            final Person person = dao.getPerson(login, em);
+            final Person person;
             final EntityTransaction transaction = em.getTransaction();
             try {
                 transaction.begin();
+                person = dao.getPerson(login, em);
                 if (processor != null) {
                     processor.process(request, em, person);
                 }

@@ -1,14 +1,13 @@
 package com.cgi.skills.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import com.cgi.skills.model.interfaces.SkillProfile;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import com.cgi.skills.model.interfaces.SkillProfile;
+import javax.persistence.ManyToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -25,7 +24,7 @@ public class Person implements SkillProfile {
 
     private String externalPhone;
 
-    @OneToMany()
+    @ManyToMany
     private Set<Skill> skills = new HashSet<>();
 
     public String getLogin() {
