@@ -2,6 +2,12 @@
 
 Web application to capture and view the skill sets in our Java Practice
 
+== Copyright and License
+
+CGI is the single copyright holder of this codebase.
+The code is Free/Libre Open Source Software (FLOSS), licensed under GPLv3.
+See LICENSE.txt for details.
+
 == Releases
 
 This project is currently in active development.
