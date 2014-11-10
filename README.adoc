@@ -1,0 +1,19 @@
+= Skills
+
+Web application to capture and view the skill sets in our Java Practice
+
+== Copyright and License
+
+CGI is the single copyright holder of this codebase.
+The code is Free/Libre Open Source Software (FLOSS), licensed under GPLv3.
+See link:LICENSE.txt[] for details.
+
+== Releases
+
+This project is currently in active development.
+No releases yet.
+
+== Build status
+
+image:https://buildhive.cloudbees.com/job/cgi-atlantic-java/job/skills/badge/icon[
+link="https://buildhive.cloudbees.com/job/cgi-atlantic-java/job/skills/"]
