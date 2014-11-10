@@ -1,17 +1,16 @@
 package com.cgi.skills.beans;
 
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-
 import com.cgi.skills.model.Category;
 import com.cgi.skills.model.Origin;
 import com.cgi.skills.model.Skill;
 import com.cgi.skills.model.SkillArea;
 import com.cgi.skills.model.SkillLevel;
 import com.cgi.skills.model.SkillType;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * TODO: Document this
@@ -60,8 +59,9 @@ public class Classifications {
     public List<SkillArea> getAllSkillAreas(Category category, SkillType type, Origin origin) {
         final List<SkillArea> result = new LinkedList<>();
 
-        for (SkillArea area : getAllSkillAreas()) {
-            if (category.equals(area.getCategory()) && type.equals(area.getType())
+        for (final SkillArea area : getAllSkillAreas()) {
+            if (category.equals(area.getCategory())
+                    && type.equals(area.getType())
                     && origin.equals(area.getOrigin())) {
 
                 result.add(area);
