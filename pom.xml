@@ -3,18 +3,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.cgi</groupId>
-    <artifactId>skills</artifactId>
+    <artifactId>project</artifactId>
+    <groupId>com.cgi.skills</groupId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <guppy4j.version>0.0.3</guppy4j.version>
+        <guppy4j.web.version>0.0.1-SNAPSHOT</guppy4j.web.version>
     </properties>
 
     <modules>
-        <module>core</module>
+        <module>api</module>
+        <module>impl</module>
+        <module>dist</module>
 
+        <!-- deprecated mishmash module -->
+        <module>core</module>
         <!-- deprecated overly complicated prototype-->
         <module>jsp-war</module>
     </modules>
@@ -32,5 +38,14 @@
             </plugin>
         </plugins>
     </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

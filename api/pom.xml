@@ -10,10 +10,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>core</artifactId>
+    <artifactId>api</artifactId>
 
     <dependencies>
-        <!-- nothing right now -->
+        <!-- nothing yet -->
     </dependencies>
 
 </project>

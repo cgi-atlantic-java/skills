@@ -10,10 +10,20 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>core</artifactId>
+    <artifactId>impl</artifactId>
 
     <dependencies>
-        <!-- nothing right now -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.guppy4j</groupId>
+            <artifactId>core</artifactId>
+            <version>${guppy4j.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

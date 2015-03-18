@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>skills</artifactId>
-        <groupId>com.cgi</groupId>
+        <artifactId>project</artifactId>
+        <groupId>com.cgi.skills</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
