@@ -15,5 +15,5 @@ No releases yet.
 
 == Build status
 
-image:https://buildhive.cloudbees.com/job/cgi-atlantic-java/job/skills/badge/icon[
-link="https://buildhive.cloudbees.com/job/cgi-atlantic-java/job/skills/"]
+image:https://travis-ci.org/cgi-atlantic-java/skills.svg["Build Status",
+link="https://travis-ci.org/cgi-atlantic-java/skills"]
