@@ -13,8 +13,10 @@
     </properties>
 
     <modules>
-        <module>war</module>
         <module>core</module>
+
+        <!-- deprecated overly complicated prototype-->
+        <module>jsp-war</module>
     </modules>
 
     <build>

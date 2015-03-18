@@ -278,6 +278,33 @@
     </inspection_tool>
     <inspection_tool class="BadExpressionStatementJS" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="BadOddness" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashAddShebang" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashArrayUseOfSimple" enabled="false" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashBuiltInVariable" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashDuplicateFunction" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashEvaluateArithmeticExpression" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashEvaluateExpression" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashFixShebang" enabled="false" level="WARNING" enabled_by_default="true">
+      <shebang>/bin/bash</shebang>
+      <shebang>/bin/sh</shebang>
+    </inspection_tool>
+    <inspection_tool class="BashFloatArithmetic" enabled="false" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="BashGlobalLocalVarDef" enabled="false" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashInternalCommandFunctionOverride" enabled="false" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashMissingInclude" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashReadOnlyVariable" enabled="false" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="BashRecursiveInclusion" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashReplaceWithBackquote" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="BashReplaceWithSubshell" enabled="false" level="INFO" enabled_by_default="false" />
+    <inspection_tool class="BashSimpleArrayUse" enabled="false" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="BashSimpleVarUsage" enabled="false" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashUnknownFileDescriptor" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashUnregisterGlobalVariableInspection" enabled="false" level="INFO" enabled_by_default="true" />
+    <inspection_tool class="BashUnresolvedVariable" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashUnusedFunction" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashUnusedFunctionParams" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashWrapFunction" enabled="false" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="BashWrapWord" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="BeforeClassOrAfterClassIsPublicStaticVoidNoArg" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="BeforeOrAfterIsPublicVoidNoArg" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="BigDecimalEquals" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1074,10 +1101,16 @@
     <inspection_tool class="IfStatementWithTooManyBranchesJS" enabled="false" level="WARNING" enabled_by_default="false">
       <option name="m_limit" value="3" />
     </inspection_tool>
+    <inspection_tool class="IgnoreCoverEntry" enabled="false" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="IgnoreDuplicateEntry" enabled="false" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="IgnoreIncorrectEntry" enabled="false" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="IgnoreRelativeEntry" enabled="false" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="IgnoreResultOfCall" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_reportAllNonLibraryCalls" value="false" />
       <option name="callCheckString" value="java.io.InputStream,read,java.io.InputStream,skip,java.lang.StringBuffer,toString,java.lang.StringBuilder,toString,java.lang.String,.*,java.math.BigInteger,.*,java.math.BigDecimal,.*,java.net.InetAddress,.*,java.io.File,.*,java.lang.Object,equals|hashCode" />
     </inspection_tool>
+    <inspection_tool class="IgnoreSyntaxEntry" enabled="false" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="IgnoreUnusedEntry" enabled="false" level="UNUSED ENTRY" enabled_by_default="true" />
     <inspection_tool class="IgnoredJUnitTest" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ImplicitArrayToString" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ImplicitCallToSuper" enabled="false" level="WARNING" enabled_by_default="false">
@@ -2363,6 +2396,7 @@
     <inspection_tool class="UnresolvedMessageChannelWarningInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UnresolvedPropertyKey" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="UnresolvedReference" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="UnsafeReturnStatementVisitor" enabled="false" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UnsafeVfsRecursion" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UnsecureRandomNumberGeneration" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UnterminatedStatementJS" enabled="true" level="WARNING" enabled_by_default="true">
