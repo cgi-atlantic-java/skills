@@ -1,13 +1,12 @@
 package com.cgi.skills;
 
 /**
- * TODO: Document this!
+ * Skills profile
  */
 public interface Profile {
 
-    Level level(String skillName);
-
     String name();
 
-    void save();
+    Level level(String skillName);
+
 }

@@ -20,8 +20,7 @@ public final class Renderer {
     }
 
     public void html(Category c, Profile profile) {
-
-        for (Category sc : c.getSubCategories()) {
+        for (Category sc : c.subCategories()) {
             fieldset(sc, profile);
         }
         close("html");
@@ -30,10 +29,10 @@ public final class Renderer {
     public void fieldset(Category c, Profile profile) {
         open("fieldset");
         legend(c);
-        for (Category sc : c.getSubCategories()) {
+        for (Category sc : c.subCategories()) {
             fieldset(sc, profile);
         }
-        for (String name : c.getSkillNames()) {
+        for (String name : c.skillNames()) {
             label(name);
             select(name, profile.level(name));
         }
@@ -42,7 +41,7 @@ public final class Renderer {
 
     private void legend(Category c) {
         open("legend");
-        append(c.getName());
+        append(c.name());
         close("legend");
     }
 
@@ -55,14 +54,14 @@ public final class Renderer {
     private void select(String name, Level currentLevel) {
         open("select", attr("name", name), attr("id", name));
         option(currentLevel, null);
-        for (Level level : Level.values()) {
+        for (Level level : LevelEnum.values()) {
             option(currentLevel, level);
         }
         close("select");
     }
 
     private void option(Level currentLevel, Level level) {
-        final int value = level == null ? 0 : level.getPercent();
+        final int value = level == null ? 0 : level.percent();
         open("option", attr("value", value), attr("selected", currentLevel == level));
         append(level == null ? "" : level.name());
         close("option");

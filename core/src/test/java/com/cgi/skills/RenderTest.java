@@ -6,7 +6,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.cgi.skills.Level.Intermediate;
+import static com.cgi.skills.LevelEnum.Intermediate;
+import static com.cgi.skills.RootCategories.JAVA_DEVELOPER;
 
 /**
  * TODO: Document this!
@@ -19,14 +20,14 @@ public class RenderTest {
 
         final StringBuilder sb = new StringBuilder();
 
-        new Renderer(sb).html(JavaDeveloper.SCHEMA, profile);
+        new Renderer(sb).html(JAVA_DEVELOPER, profile);
 
         System.out.print(sb.toString());
 
     }
 
     private Profile profile(String name) {
-        Map<String, Level> map = new HashMap<>();
+        final Map<String, Level> map = new HashMap<>();
         map.put("JPA", Intermediate);
         return new MapProfile(name, map);
     }

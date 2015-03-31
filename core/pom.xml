@@ -13,7 +13,11 @@
     <artifactId>core</artifactId>
 
     <dependencies>
-        <!-- nothing right now -->
+        <dependency>
+            <groupId>com.cgi.skills</groupId>
+            <artifactId>impl</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

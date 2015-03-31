@@ -2,7 +2,8 @@ package com.cgi.skills;
 
 import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
-import io.undertow.util.Headers;
+import io.undertow.server.handlers.resource.ClassPathResourceManager;
+import io.undertow.server.handlers.resource.ResourceHandler;
 import org.guppy4j.io.PathHelper;
 import org.guppy4j.io.StdPathHelper;
 import org.guppy4j.log.Log;
@@ -12,6 +13,7 @@ import org.guppy4j.log.Slf4jLogProvider;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import static io.undertow.Handlers.resource;
 import static java.lang.Runtime.getRuntime;
 import static java.lang.Thread.setDefaultUncaughtExceptionHandler;
 import static org.guppy4j.log.Log.Level.error;
@@ -41,10 +43,12 @@ public final class Application {
 
         final Path homeDir = Paths.get(System.getProperty("user.home"));
 
-        final HttpHandler httpHandler = ex -> {
-            ex.getResponseHeaders().put(Headers.CONTENT_TYPE, "text/plain");
-            ex.getResponseSender().send("Hello World");
-        };
+        final ResourceHandler fileHandler = resource(new ClassPathResourceManager(
+                getClass().getClassLoader(), getClass().getPackage()));
+
+        final HttpHandler httpHandler =
+                new HttpResourceHandler(logProvider, fileHandler);
+
 
         server = Undertow.builder()
                 .addHttpListener(DEFAULT_PORT, DEFAULT_HOST)
