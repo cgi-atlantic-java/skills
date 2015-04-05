@@ -4,6 +4,8 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.handlers.resource.ClassPathResourceManager;
 import io.undertow.server.handlers.resource.ResourceHandler;
+import org.guppy4j.http.ResourcesMap;
+import org.guppy4j.http.UndertowAdapter;
 import org.guppy4j.io.PathHelper;
 import org.guppy4j.io.StdPathHelper;
 import org.guppy4j.log.Log;
@@ -46,9 +48,11 @@ public final class Application {
         final ResourceHandler fileHandler = resource(new ClassPathResourceManager(
                 getClass().getClassLoader(), getClass().getPackage()));
 
-        final HttpHandler httpHandler =
-                new HttpResourceHandler(logProvider, fileHandler);
+        final RequestHandlerImpl requestHandler =
+                new RequestHandlerImpl(logProvider, new ResourcesMap());
 
+        final HttpHandler httpHandler =
+                new UndertowAdapter(requestHandler, fileHandler, "file");
 
         server = Undertow.builder()
                 .addHttpListener(DEFAULT_PORT, DEFAULT_HOST)
