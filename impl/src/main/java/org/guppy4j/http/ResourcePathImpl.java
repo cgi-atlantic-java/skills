@@ -22,7 +22,7 @@ public final class ResourcePathImpl implements ResourcePath {
 
     @Override
     public String resourceName() {
-        return pathElements.length < 2 ? null : pathElements[1];
+        return pathElements.length > 1 ? pathElements[1] : null;
     }
 
     @Override

@@ -39,14 +39,15 @@ public final class Application {
 
 
     public Application() {
+        final Class<? extends Application> myClass = getClass();
 
         final LogProvider logProvider = new Slf4jLogProvider();
-        log = logProvider.getLog(getClass());
+        log = logProvider.getLog(myClass);
 
         final Path homeDir = Paths.get(System.getProperty("user.home"));
 
         final ResourceHandler fileHandler = resource(new ClassPathResourceManager(
-                getClass().getClassLoader(), getClass().getPackage()));
+                myClass.getClassLoader(), myClass.getPackage()));
 
         final RequestHandlerImpl requestHandler =
                 new RequestHandlerImpl(logProvider, new ResourcesMap());

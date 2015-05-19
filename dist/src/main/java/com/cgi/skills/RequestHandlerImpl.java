@@ -31,8 +31,9 @@ public final class RequestHandlerImpl implements RequestHandler {
     public Response handle(Request request) {
         final Response response = request.startBlockingResponse();
 
-        // TODO: Remove this temporary debug code when done
         try (final Writer writer = response.writer("text/plain")) {
+
+            // TODO: Remove this temporary debug code when done
             request.appendTo(writer);
 
             // and generated resource content
