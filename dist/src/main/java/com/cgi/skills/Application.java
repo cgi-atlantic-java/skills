@@ -5,7 +5,9 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.handlers.resource.ClassPathResourceManager;
 import io.undertow.server.handlers.resource.ResourceHandler;
 import org.guppy4j.http.ResourcesMap;
+import org.guppy4j.http.Server;
 import org.guppy4j.http.UndertowAdapter;
+import org.guppy4j.http.UndertowServer;
 import org.guppy4j.io.PathHelper;
 import org.guppy4j.io.StdPathHelper;
 import org.guppy4j.log.Log;
@@ -18,9 +20,7 @@ import java.nio.file.Paths;
 import static io.undertow.Handlers.resource;
 import static java.lang.Runtime.getRuntime;
 import static java.lang.Thread.setDefaultUncaughtExceptionHandler;
-import static org.guppy4j.log.Log.Level.error;
-import static org.guppy4j.log.Log.Level.info;
-import static org.guppy4j.log.Log.Level.warn;
+import static org.guppy4j.log.Log.Level.*;
 
 /**
  * The 'Skills' application class that creates and injects all components
@@ -29,13 +29,13 @@ import static org.guppy4j.log.Log.Level.warn;
 public final class Application {
 
     private static final String DEFAULT_HOST = "localhost";
-    private static final int DEFAULT_PORT = 8080;
+    private static final int DEFAULT_PORT = 80;
 
     private static final String APP_NAME = "Skills";
 
     private final Log log;
 
-    private final Undertow server;
+    private final Server server;
 
 
     public Application() {
@@ -55,10 +55,10 @@ public final class Application {
         final HttpHandler httpHandler =
                 new UndertowAdapter(requestHandler, fileHandler, "file");
 
-        server = Undertow.builder()
+        server = new UndertowServer(Undertow.builder()
                 .addHttpListener(DEFAULT_PORT, DEFAULT_HOST)
                 .setHandler(httpHandler)
-                .build();
+                .build());
 
         setShutdownHandlers();
 
