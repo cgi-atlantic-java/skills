@@ -10,7 +10,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <guppy4j.version>0.0.3</guppy4j.version>
+        <guppy4j.libraries.version>0.0.4-SNAPSHOT</guppy4j.libraries.version>
         <guppy4j.web.version>0.0.1-SNAPSHOT</guppy4j.web.version>
     </properties>
 
@@ -18,9 +18,6 @@
         <module>api</module>
         <module>impl</module>
         <module>dist</module>
-
-        <!-- deprecated mishmash module -->
-        <module>core</module>
         <!-- deprecated overly complicated prototype-->
         <module>jsp-war</module>
     </modules>

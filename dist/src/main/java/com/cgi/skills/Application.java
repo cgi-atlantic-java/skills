@@ -4,12 +4,10 @@ import io.undertow.Undertow;
 import io.undertow.server.HttpHandler;
 import io.undertow.server.handlers.resource.ClassPathResourceManager;
 import io.undertow.server.handlers.resource.ResourceHandler;
-import org.guppy4j.http.ResourcesMap;
+import org.guppy4j.http.Resources;
 import org.guppy4j.http.Server;
 import org.guppy4j.http.UndertowAdapter;
 import org.guppy4j.http.UndertowServer;
-import org.guppy4j.io.PathHelper;
-import org.guppy4j.io.StdPathHelper;
 import org.guppy4j.log.Log;
 import org.guppy4j.log.LogProvider;
 import org.guppy4j.log.Slf4jLogProvider;
@@ -29,7 +27,7 @@ import static org.guppy4j.log.Log.Level.*;
 public final class Application {
 
     private static final String DEFAULT_HOST = "localhost";
-    private static final int DEFAULT_PORT = 80;
+    private static final int DEFAULT_PORT = 8888;
 
     private static final String APP_NAME = "Skills";
 
@@ -50,7 +48,7 @@ public final class Application {
                 myClass.getClassLoader(), myClass.getPackage()));
 
         final RequestHandlerImpl requestHandler =
-                new RequestHandlerImpl(logProvider, new ResourcesMap());
+                new RequestHandlerImpl(logProvider, new Resources() {});
 
         final HttpHandler httpHandler =
                 new UndertowAdapter(requestHandler, fileHandler, "file");
@@ -61,9 +59,6 @@ public final class Application {
                 .build());
 
         setShutdownHandlers();
-
-        final PathHelper pathHelper =
-                new StdPathHelper(APP_NAME, homeDir, logProvider);
 
     }
 

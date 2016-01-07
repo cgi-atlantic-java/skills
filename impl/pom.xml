@@ -22,7 +22,7 @@
         <dependency>
             <groupId>org.guppy4j</groupId>
             <artifactId>core</artifactId>
-            <version>${guppy4j.version}</version>
+            <version>${guppy4j.libraries.version}</version>
         </dependency>
     </dependencies>
 
