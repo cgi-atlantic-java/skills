@@ -8,11 +8,6 @@ CGI is the single copyright holder of this codebase.
 The code is Free/Libre Open Source Software (FLOSS), licensed under GPLv3.
 See link:LICENSE.txt[] for details.
 
-== Releases
-
-This project is currently in active development.
-No releases yet.
-
 == Build status
 
 image:https://travis-ci.org/cgi-atlantic-java/skills.svg["Build Status",
