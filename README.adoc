@@ -1,6 +1,6 @@
 = Skills
 
-Web application to capture and view the skill sets in our Java Practice
+Web application to capture and view the skill sets in our Java/JEE Practice
 
 == Copyright and License
 
