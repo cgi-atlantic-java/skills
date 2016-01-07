@@ -1,13 +1,6 @@
 package skills.db;
 
-import skills.model.Category;
-import skills.model.NamedIdHolder;
-import skills.model.Origin;
-import skills.model.Person;
-import skills.model.Skill;
-import skills.model.SkillArea;
-import skills.model.SkillLevel;
-import skills.model.SkillType;
+import skills.model.*;
 
 import javax.persistence.EntityManager;
 import java.util.HashSet;

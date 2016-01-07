@@ -1,11 +1,6 @@
 package skills.beans;
 
-import skills.model.Category;
-import skills.model.Origin;
-import skills.model.Skill;
-import skills.model.SkillArea;
-import skills.model.SkillLevel;
-import skills.model.SkillType;
+import skills.model.*;
 import skills.model.interfaces.SkillProfile;
 
 import java.util.Collections;
